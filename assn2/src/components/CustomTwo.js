@@ -1,7 +1,20 @@
+/**
+ * Adam Tak
+ * A02171784
+ * CS3200
+ * Dr. Chad Mano
+ */
+
+
+
+
+
+
 import React, { Component } from 'react';
 import {
-  Button,
-  StyleSheet
+  StyleSheet,
+  Text,
+  TouchableOpacity
 } from 'react-native';
 
 import styles from '../styles/Style'
@@ -9,10 +22,15 @@ import styles from '../styles/Style'
 export default class CustomTwo extends Component<{}> {
   render() {
     return (
-        <Button
-            title={(this.props.name)}
-            onPress={() => this.props.pressedButton()}
-        />
+      <TouchableOpacity
+        style={styles.button}
+        
+      
+      >
+        <Text>
+          -
+        </Text>
+      </TouchableOpacity>
     );
   }
 }

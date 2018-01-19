@@ -32,7 +32,7 @@ export default class App extends Component<{}> {
       <View style={styles.container}>
         
         <CustomOne/>
-        
+        <CustomTwo/>  
         
       </View>
     );

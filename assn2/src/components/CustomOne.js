@@ -7,7 +7,6 @@
 
 import React, { Component } from 'react';
 import {
-  Button,
   StyleSheet,
   Text,
   TouchableOpacity
@@ -20,7 +19,7 @@ export default class CustomOne extends Component {
     return (
       <TouchableOpacity
         style={styles.button}
-
+        
       
       >
         <Text>
