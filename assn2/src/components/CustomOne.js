@@ -8,14 +8,25 @@
 import React, { Component } from 'react';
 import {
   Button,
+  StyleSheet,
+  Text,
+  TouchableOpacity
 } from 'react-native';
 
-export default class CustomOne extends Component<{}> {
+import styles from '../styles/Style'
+
+export default class CustomOne extends Component {
   render() {
     return (
-      <Button title='1'
-       
-      />
+      <TouchableOpacity
+        style={styles.button}
+
+      
+      >
+        <Text>
+          +
+        </Text>
+      </TouchableOpacity>
     );
   }
 }
