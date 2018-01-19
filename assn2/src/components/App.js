@@ -1,16 +1,20 @@
 /**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
+ * Adam Tak
+ * A02171784
+ * CS3200
+ * Dr. Chad Mano
  */
 
 import React, { Component } from 'react';
 import {
+  Button,
+  Image,
   Platform,
   StyleSheet,
   Text,
   View
 } from 'react-native';
+import CustomOne from './CustomOne';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' +
@@ -23,15 +27,8 @@ export default class App extends Component<{}> {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit App.js
-        </Text>
-        <Text style={styles.instructions}>
-          {instructions}
-        </Text>
+        
+        <CustomOne name='yay'/>
       </View>
     );
   }
