@@ -1,3 +1,9 @@
+/**
+ * Adam Tak
+ * A02171784
+ * CS3200
+ * Dr. Chad Mano
+ */
 import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
@@ -23,6 +29,14 @@ export default StyleSheet.create({
     buttonText: {
         fontSize: 25
     },
+    countText: {
+        color: '#FF00FF',
+        fontSize: 48
+      },
+    countContainer: {
+      alignItems: 'center',
+      padding: 10
+    }
 
 
 

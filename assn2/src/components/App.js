@@ -26,10 +26,24 @@ const instructions = Platform.select({
     'Shake or press menu button for dev menu',
 });
 
-export default class App extends Component<{}> {
+export default class App extends Component {
+  constructor(props){
+    super(props);
+
+    this.state = {
+      value: 0
+    }
+  }
+
+
   render() {
     return (
       <View style={styles.container}>
+        <View style={styles.countContainer}>
+          <Text style={styles.countText}>
+            {this.state.value}
+          </Text>
+        </View>
         
         <CustomOne/>
         <CustomTwo/>  

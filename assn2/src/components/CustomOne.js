@@ -18,10 +18,7 @@ export default class CustomOne extends Component {
   render() {
     return (
       <TouchableOpacity
-        style={styles.button}
-        
-      
-      >
+        style={styles.button}>
         <Text>
           +
         </Text>
