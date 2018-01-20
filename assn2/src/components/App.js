@@ -32,7 +32,7 @@ export default class App extends Component {
 
     this.state = {
       value: 0
-    }
+    };
   }
 
 
@@ -45,10 +45,34 @@ export default class App extends Component {
           </Text>
         </View>
         
-        <CustomOne/>
-        <CustomTwo/>  
+        <CustomOne 
+          pressedButton={() => this.pressedUp()}
+        />
+        <CustomTwo
+          pressedButton={() => this.pressedDown()}
+        />  
+
         
       </View>
     );
+  }
+  pressedUp(){
+    this.setState((prevState) => {
+      return {
+        value: prevState.value + 1
+
+      }
+    }
+    );
+  }
+
+  pressedDown(){
+    this.setState((prevState) => {
+      return {
+        value: prevState.value - 1
+
+      }
+    }
+    ); 
   }
 }

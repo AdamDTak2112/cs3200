@@ -5,11 +5,6 @@
  * Dr. Chad Mano
  */
 
-
-
-
-
-
 import React, { Component } from 'react';
 import {
   StyleSheet,
@@ -19,16 +14,15 @@ import {
 
 import styles from '../styles/Style'
 
-export default class CustomTwo extends Component<{}> {
+export default class CustomTwo extends Component {
   render() {
     return (
       <TouchableOpacity
         style={styles.button}
-        
-      
-      >
-        <Text>
-          -
+        onPress={() => this.props.pressedButton()}
+        >
+        <Text style={styles.buttonText}>
+          Down
         </Text>
       </TouchableOpacity>
     );
