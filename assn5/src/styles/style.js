@@ -6,7 +6,6 @@ export default StyleSheet.create({
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: 'yellow',
     },
     touchableButton: {
         backgroundColor: 'lightblue',
@@ -14,4 +13,19 @@ export default StyleSheet.create({
         margin: 10,
         borderRadius: 20
     }, 
+    title: {
+        fontSize: 20,
+        textAlign: 'center',
+        margin: 10,
+        marginTop:40
+      },
+    itemContainer: {
+        flexDirection: 'row',
+        justifyContent : 'space-around',
+        alignSelf: 'stretch',
+      },
+      textItem: {
+        flex:1,
+        textAlign: 'center'
+      },
 });
