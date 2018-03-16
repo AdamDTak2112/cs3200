@@ -27,7 +27,7 @@ export default class BrowsePage extends Component{
         return(
             <Container>
                 <Header>
-                <Text style={{color: 'white'}}>Welcome to your favorite Movie Database!</Text>
+                <Text style={styles.title}>Browse</Text>
                 
                 </Header>
                 <Content>

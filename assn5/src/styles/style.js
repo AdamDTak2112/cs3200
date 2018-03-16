@@ -17,15 +17,28 @@ export default StyleSheet.create({
         fontSize: 20,
         textAlign: 'center',
         margin: 10,
-        marginTop:40
+        color: 'white',
+        flex: 1
       },
     itemContainer: {
         flexDirection: 'row',
-        justifyContent : 'space-around',
+        justifyContent : 'flex-start',
         alignSelf: 'stretch',
       },
       textItem: {
         flex:1,
         textAlign: 'center'
       },
+    detailContainer: {
+        flexDirection: 'column',
+        flex: 1,
+        
+        
+    },
+    detailText: {
+        margin: 10,
+        padding: 10,
+        textAlign: 'left',
+        flex: 2,
+    },
 });

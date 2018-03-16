@@ -11,7 +11,7 @@ let ApiService = class ApiService{
         this.language = 'en-US';
         this.includeAdult = 'false';
         this.imageHost = 'image.tmdb.org/t/p';
-        this.posterSize = 'w150';
+        this.posterSize = 'w500';
     }
 
     getGenres(){
@@ -25,11 +25,19 @@ let ApiService = class ApiService{
     }
 
     getMovieList(){
-       return `${this.apiProtocol}//${this.apiHost}discover/movie?api_key=${this.apiKey}&language=${this.language}&include_adult=false&include_video=false`;
+       return `${this.apiProtocol}//${this.apiHost}discover/movie?api_key=${this.apiKey}&language=${this.language}&include_adult=${this.includeAdult}&include_video=false`;
     }
 
     getPosterImage(imagePath){
         return `${this.apiProtocol}//${this.imageHost}/${this.posterSize}/${imagePath}`;
+    }
+
+    getMovieSearch(query){
+        return `${this.apiProtocol}//${this.apiHost}search/movie?api_key=${this.apiKey}&language=${this.language}&query=${encodeURI(query)}&include_adult=${this.includeAdult}`;
+    }
+
+    getPersonSearch(query){
+        return `${this.apiProtocol}//${this.apiHost}search/person?api_key=${this.apiKey}&language=${this.language}&query=${encodeURI(query)}&include_adult=${this.includeAdult}`
     }
 };
 

@@ -45,6 +45,25 @@ let MovieService = class MovieService {
         });
     }
 
+    getMovieSearch(query){
+        return new Promise((resolve, reject) => {
+            fetch(apiService.getMovieSearch(query))
+            .then((response) => response.json())
+            .then((responseJson) => {
+                console.log(typeof(responseJson.results));
+                let items = [];
+                responseJson.results.forEach(element => {
+                    items.push(new Movie(element.title, element.poster_path, element.popularity, element.overview, element.release_date));
+                });
+                resolve(items);
+            })
+            .catch((error) =>{
+                console.error(error);
+                reject(error);
+            });
+        }); 
+    }
+
     getPoster(posterPath){
         return new Promise((resolve, reject) => {
             fetch(apiService.getPosterImage(posterPath))

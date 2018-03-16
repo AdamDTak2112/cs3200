@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import {
     Platform,
-    StyleSheet,
-    View,
     FlatList,
     Image, 
 } from 'react-native';
@@ -20,22 +18,29 @@ export default class BrowseListPage extends Component{
         this.state={
             data: null,
             searchPage: 1,
-            loading: false
+            loading: false,
+            
         }
+        let subjectItem = this.props.navigation.state.params.item
+
     }
 
     componentDidMount(){
         this._getMovies();
     }
+    
+    
 
     render(){
+        let subjectItem = this.props.navigation.state.params.item
+
         return(
             <Container>
-                
+                <Header>
                 <Text style={styles.title}>
-                    {this.props.navigation.state.params.item.getName()}
+                    {subjectItem.getName()}
                 </Text>
-                
+                </Header>
                 
                 {this.state.data != null ? this._renderMovies() : <Text>...Just a few more seconds</Text>}
                 
@@ -44,8 +49,8 @@ export default class BrowseListPage extends Component{
     }
 
     _getMovies(){
-       console.log(this.props.navigation.state.params.item.getID());
-       this.setState({loading: true});
+        console.log(this.props.navigation.state.params);
+        this.setState({loading: true});
         movieService.getMovies(this.props.navigation.state.params.item.getID(), this.state.searchPage.toString())
         .then(results =>{
             if(this.state.searchPage != '1'){
@@ -73,7 +78,7 @@ export default class BrowseListPage extends Component{
     }
 
     _getMoreMovies() {
-        console.log("reached getmoremovies");
+        
         this.setState({
             searchPage: this.state.searchPage + 1
         }, () => this._getMovies());
@@ -101,10 +106,19 @@ export default class BrowseListPage extends Component{
     }
 
     _renderItem = ({item}) => {
+        
         return (
         <Card>
             
-            <CardItem header button onPress={() => this.props.navigation.navigate('MovieDetails', {item})}>
+            <CardItem header button onPress={() => this.props.navigation.navigate(
+                'MovieDetails', item/*{
+                    itemName: item.getTitle(),
+                    itemYear: item.getYearReleased(),
+                    itemPosterPath: item.getPosterPath(),
+                    itemPopularity: item.getPopularity(),
+                    itemOverview: item.getOverview(),
+                }*/
+                )}>
                 
             <Left>
             <Image source={{uri: apiService.getPosterImage(item.getPosterPath())}} style={{height: 225, width: 150, flex: 1}}/>

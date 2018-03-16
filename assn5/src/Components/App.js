@@ -15,8 +15,10 @@ import {
 import BrowsePage from './pages/BrowsePage';
 import BrowseListPage from './pages/BrowseListPage';
 import SearchResultsPage from './pages/SearchResultsPage';
+import SearchPersonResultsPage from './pages/SearchPersonResultPage';
 import SearchPage from './pages/SearchPage';
 import MovieDetails from './details/MovieDetails';
+
 
 
 const RootBrowse = StackNavigator({
@@ -39,12 +41,22 @@ const RootSearch = StackNavigator({
     SearchResultsPage: {
       screen: SearchResultsPage
     },
+    SearchPersonResultsPage: {
+      screen: SearchPersonResultsPage
+    },
     MovieDetails:{
       screen: MovieDetails
     }
+
 })
 
 const RootTab = TabNavigator({
+  SearchTab: {
+    screen: RootSearch,
+    navigationOptions:{
+      title: 'Search'
+    }
+  },
     BrowseTab: {
       screen: RootBrowse,
       navigationOptions:{
@@ -52,16 +64,11 @@ const RootTab = TabNavigator({
 
       } 
     },
-    SearchTab: {
-      screen: RootSearch,
-      navigationOptions:{
-        title: 'Search'
-      }
-    },
+    
 },
     {
     tabBarPosition: 'bottom',
-
+    
     });
 
 
@@ -74,21 +81,3 @@ export default class App extends Component{
   }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-});

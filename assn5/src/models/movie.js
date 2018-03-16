@@ -30,4 +30,13 @@ export class Movie {
     getOverview(){
         return this.overview;
     }
+
+    getShortOverview(){
+        if (this.overview.length > 75){
+            return this.overview.substring(0, 75) + "...";
+        }
+        else{
+            return this.overview;
+        }
+    }
 }

@@ -17,7 +17,10 @@ import styles from './../../styles/style';
 export default class MovieSummary extends Component{
     constructor(props){
         super(props);
+
     }
+
+
 
     render(){
         return(
