@@ -16,6 +16,7 @@ import BrowsePage from './pages/BrowsePage';
 import BrowseListPage from './pages/BrowseListPage';
 import SearchResultsPage from './pages/SearchResultsPage';
 import SearchPage from './pages/SearchPage';
+import MovieDetails from './details/MovieDetails';
 
 
 const RootBrowse = StackNavigator({
@@ -25,6 +26,9 @@ const RootBrowse = StackNavigator({
     BrowseListPage:{
       screen: BrowseListPage
     },
+    MovieDetails:{
+      screen: MovieDetails
+    }
 })
 
 
@@ -35,6 +39,9 @@ const RootSearch = StackNavigator({
     SearchResultsPage: {
       screen: SearchResultsPage
     },
+    MovieDetails:{
+      screen: MovieDetails
+    }
 })
 
 const RootTab = TabNavigator({
@@ -59,7 +66,7 @@ const RootTab = TabNavigator({
 
 
 
-export default class App extends Component<> {
+export default class App extends Component{
   render() {
     return (
       <RootTab/>

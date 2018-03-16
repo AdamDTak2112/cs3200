@@ -3,9 +3,12 @@
  */
 
 export class Movie {
-    constructor(title, year) {
+    constructor(title,posterPath,popularity,overview, year) {
         this.title = title;
         this.yearReleased = year;
+        this.posterPath = posterPath;
+        this.popularity = popularity;
+        this.overview = overview;
     }
 
     getTitle() {
@@ -14,5 +17,17 @@ export class Movie {
 
     getYearReleased() {
         return this.yearReleased;
+    }
+
+    getPosterPath(){
+        return this.posterPath;
+    }
+
+    getPopularity(){
+        return this.popularity;
+    }
+
+    getOverview(){
+        return this.overview;
     }
 }
