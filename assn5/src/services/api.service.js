@@ -12,6 +12,7 @@ let ApiService = class ApiService{
         this.includeAdult = 'false';
         this.imageHost = 'image.tmdb.org/t/p';
         this.posterSize = 'w500';
+        this.personImageSize = 'w185';
     }
 
     getGenres(){
@@ -38,6 +39,10 @@ let ApiService = class ApiService{
 
     getPersonSearch(query){
         return `${this.apiProtocol}//${this.apiHost}search/person?api_key=${this.apiKey}&language=${this.language}&query=${encodeURI(query)}&include_adult=${this.includeAdult}`
+    }
+
+    getPersonPicture(imagePath){
+        return `${this.apiProtocol}//${this.imageHost}/${this.personImageSize}/${imagePath}`;
     }
 };
 
